@@ -1,5 +1,5 @@
-rhizome
-=======
+##rhizome
+
 
 A modern course management system built on Spring, Hibernate and Neo4J.
 
@@ -9,13 +9,13 @@ rhizome works differently than traditional course management systems such as Moo
 
 rhizome is based on theories of social systems which, it turns out, translate into the programming world very well. 
 
-Requirements
-============
+###Requirements
+
 
 At the very least, you will need Spring, Hibernate, Neo4J and a copy of rhizome. We use the latest versions of these tools.
 
-Building rhizome
-================
+###Building rhizome
+
 
 rhizome uses a Maven-based build system.
 
