@@ -1,7 +1,7 @@
 ##rhizome
 
 
-A modern course management system built on Spring, Hibernate and Neo4J.
+A modern course management system built on Spring, Couchbase, and Neo4J.
 
 rhizome provides a portable and scaleable solution for building course management systems. A key aspect of rhizome is its infrastructural support for online conversations. Instead of a model in which each course has its own website, rhizome shifts the focus to students and their conversations with other students and their instructors. rhizome is built to extend the classroom conversations into an academic network, in all senses of the word.
 
