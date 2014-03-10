@@ -1,4 +1,4 @@
-##rhizome
+##willow
 
 
 A modern course management system built on Spring, Couchbase, and Neo4J.
