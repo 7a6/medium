@@ -41,7 +41,6 @@ public class GraphDBLoader {
             jose = template.findOne(jose.getId(), Student.class);
             jose.hasClassWith(mary);
             template.save(jose);
-            
             pw.println("Jose = " + jose.getId());
 
             pw.println(((Student)(template.findOne(jane.getId(), Student.class))));
