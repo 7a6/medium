@@ -8,7 +8,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 //import com.sevenasix.rhizome.SiteController;
 
-public class RhizomeController {
+public class WillowController {
 
     
     public void onStartup(ServletContext container) {

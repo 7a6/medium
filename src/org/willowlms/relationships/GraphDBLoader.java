@@ -17,37 +17,36 @@ public class GraphDBLoader {
 		this.template = template;
 	}
 	
+	//for now just a junk method to connect Neo4j to Spring
 	public void doLoad(PrintWriter pw)
 	{
 		
-		Student matt = new Student("Matt", null);
-        Student jessica = new Student("Jessica", null);
-        Student sidney = new Student("Sidney", null);
-        Student clara = new Student("Clara", null);
+		Student bill = new Student("Bill", null);
+        Student jose = new Student("Jose", null);
+        Student jane = new Student("Jane", null);
+        Student mary = new Student("Mary", null);
 
         try {
-            template.save(matt);
-            template.save(jessica);
-            template.save(sidney);
-            template.save(clara);
+            template.save(bill);
+            template.save(jose);
+            template.save(jane);
+            template.save(mary);
 
-            sidney = template.findOne(sidney.getId(), Student.class);
-            sidney.hasClassWith(matt);
-            sidney.hasClassWith(jessica);
-            sidney.hasClassWith(clara);
-            template.save(sidney);
+            jane = template.findOne(jane.getId(), Student.class);
+            jane.hasClassWith(bill);
+            jane.hasClassWith(jose);
+            jane.hasClassWith(mary);
+            template.save(jane);
 
-            jessica = template.findOne(jessica.getId(), Student.class);
-            jessica.hasClassWith(clara);
-            // We already know that roy works with greg
-            template.save(jessica);
+            jose = template.findOne(jose.getId(), Student.class);
+            jose.hasClassWith(mary);
+            template.save(jose);
             
-            // We already know craig works with roy and greg
-            pw.println("Jessica= " + jessica.getId());
+            pw.println("Jose = " + jose.getId());
 
-            pw.println(((Student)(template.findOne(sidney.getId(), Student.class))));
+            pw.println(((Student)(template.findOne(jane.getId(), Student.class))));
             
-           // tx.success();
+
         } finally {
             
         }
