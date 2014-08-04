@@ -7,12 +7,10 @@ import org.willowlms.actors.User;
  *
  */
 public interface Repository {
-	
-	public String store();
-	
-	public byte[] retrieve();
-	
-	public void isAuthorized(User u, Action a);
-	
+public String store();
 
+public byte[] retrieve();
+
+public void isAuthorized(User u, Action a
+        );
 }

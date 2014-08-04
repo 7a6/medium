@@ -1,13 +1,8 @@
 package org.willowlms.relationships;
 
 import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-
-
 //import org.neo4j.graphdb.GraphDatabaseService;
 //import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
@@ -30,29 +25,22 @@ import org.willowlms.data.StudentGraphRepository;
 @Configuration
 @EnableNeo4jRepositories
 public class CourseRelationshipsController extends Neo4jConfiguration {
-   
+/*@Autowired
+   SpringRestGraphDatabase graphdb;
+   @Autowired
+   StudentGraphRepository personRepository ;//=  (StudentGraphRepository)template.repositoryFor(Student.class);    */
+@Autowired
+Neo4jTemplate template;
 
-	
-	/*@Autowired
-	SpringRestGraphDatabase graphdb;
-    @Autowired
-	StudentGraphRepository personRepository ;//=  (StudentGraphRepository)template.repositoryFor(Student.class);    */
-	@Autowired
-	Neo4jTemplate template;
+@RequestMapping(value = "/helloWorld", method = RequestMethod.GET)
+public void
+loadDB(HttpServletResponse res, HttpServletRequest req) throws Exception
+{
+	PrintWriter pw = res.getWriter();
 
-    @RequestMapping(value="/helloWorld", method = RequestMethod.GET)
-    public void loadDB(HttpServletResponse res, HttpServletRequest req) throws Exception {
-    	
-        PrintWriter pw = res.getWriter();
-        pw.println("Before linking up with Neo4j...");
+	pw.println("Before linking up with Neo4j...");
 
-        GraphDBLoader g = new GraphDBLoader(template);
-        g.doLoad(pw);
-    	
-       
-    }
-
-
-
+	GraphDBLoader g = new GraphDBLoader(template);
+	g.doLoad(pw);
 }
-
+}

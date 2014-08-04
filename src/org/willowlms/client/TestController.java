@@ -12,28 +12,24 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
 @RequestMapping("/test")
 public class TestController {
+@RequestMapping(method = RequestMethod.GET)
+public void
+doStuff(
+	HttpServletRequest req,
+	HttpServletResponse res)
+{
+	PrintWriter pw;
 
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public void doStuff(
-			HttpServletRequest req,
-			HttpServletResponse res) {
-		
-		PrintWriter pw;
-		try {
-			pw = res.getWriter();
-			pw.write("hello man!");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
+	try {
+		pw = res.getWriter();
+		pw.write("hello man!");
 	}
-
+	catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
 }
