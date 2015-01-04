@@ -7,6 +7,10 @@ A modern course management system built on Spring, MongoDB for student data, and
 
 ![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium)
 
+[![coverity Status](https://scan.coverity.com/projects/3822)](https://scan.coverity.com/projects/3822)
+
+
+
 ###Requirements
 MongoDB 2.6 or higher
 Neo4J 2.0 or higher
