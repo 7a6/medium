@@ -5,7 +5,10 @@ A modern course management system built on Spring, MongoDB for student data, and
 
 ###Status
 
-![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium) [![coverity Status](https://scan.coverity.com/projects/3822)](https://scan.coverity.com/projects/3822)
+![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium) <a href="https://scan.coverity.com/projects/3822">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/3822/badge.svg"/>
+</a>
 
 
 
