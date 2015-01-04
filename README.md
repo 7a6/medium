@@ -9,6 +9,7 @@ A modern course management system built on Spring, MongoDB for student data, and
   <img alt="Coverity Scan Build Status"
        src="https://scan.coverity.com/projects/3822/badge.svg"/>
 </a>
+[![Codacy Badge](https://www.codacy.com/project/badge/3c0585f1d69647f4bf4a015d32cbf899)](https://www.codacy.com/public/mttdbrd/medium)
 
 
 
