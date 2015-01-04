@@ -5,7 +5,7 @@ A modern course management system built on Spring, MongoDB for student data, and
 
 ###Status
 
-![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master)
+![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium)
 
 ###Requirements
 MongoDB 2.6 or higher
