@@ -18,10 +18,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
 
     <properties>
-        <start-class>RestTestDriver</start-class>
+        <start-class>org.sevenasix.medium.application.Driver</start-class>
     </properties>
 
     <build>
