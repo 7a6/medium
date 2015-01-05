@@ -12,6 +12,6 @@ addons:
       description: "Modern course management system"
     notification_email: mttdbrd@gmail.com
     build_command_prepend: ""
-    build_command:   "mvn compile"
+    build_command:   "cov-build --dir COV mvn compile"
     branch_pattern: coverity_scan
     
