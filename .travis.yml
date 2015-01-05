@@ -1,1 +1,16 @@
 language: java
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "LEL7h8Gg01yoluW3EOJU9l0OBakwv3ToE4VxZANB6+y9cKu1GFvHC0v4VwjDqiraiua05C0i9jv/4v+LJQTWRbQ6Q+JZwhJ8QxQcCTlaabSZk3abcSuSS9UzFora/qnmQ6fEfCL1LdtGn3NzweflLcpMC7rmz73+aGUKZdQiLTg="
+
+addons:
+  coverity_scan:
+    project:
+      name: "mttdbrd/medium"
+      description: "Modern course management system"
+    notification_email: mttdbrd@gmail.com
+    build_command_prepend: ""
+    build_command:   "mvn compile"
+    branch_pattern: coverity_scan
