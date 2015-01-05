@@ -1,4 +1,6 @@
 language: java
+jdk:
+  - oraclejdk8
 env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
@@ -12,7 +14,7 @@ addons:
       description: "Modern course management system"
     notification_email: mttdbrd@gmail.com
     build_command_prepend: ""
-    build_command:   "cov-build --dir COV mvn compile"
+    build_command:   "mvn compile"
     branch_pattern: coverity_scan
 after_success:
   - mvn clean test jacoco:report coveralls:report    
