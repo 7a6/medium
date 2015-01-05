@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/mttdbrd/medium.png?label=ready&title=Ready)](https://waffle.io/mttdbrd/medium)
 ##medium
 
 
