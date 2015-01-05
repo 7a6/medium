@@ -13,6 +13,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
+import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 @ComponentScan ({"org.sevenasix.medium.actors", "org.sevenasix.medium.registrar"})
 @EnableAutoConfiguration
 public class RestTestDriver{
@@ -31,8 +34,9 @@ public class RestTestDriver{
     public void checkNameExists() throws IOException {
 
         ByteBuffer buffer = ByteBuffer.allocate(1024);
+        String studentName = "TestStudent";
 
-        URL url = new URL("http://localhost:8080/student?name=TestStudent");
+        URL url = new URL("http://localhost:8080/student?name=" + studentName);
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         System.out.println("conn = " + conn.getResponseCode() + ", msg = " + conn.getResponseMessage());
         ReadableByteChannel byteChannel = Channels.newChannel(conn.getInputStream());
@@ -46,13 +50,7 @@ public class RestTestDriver{
             stringBuilder.append(new String(data));
 
         }
-
-        System.out.println(stringBuilder.toString());
-
-    
-
-
-
+        assertTrue(stringBuilder.toString().contains(studentName));
     }
 
 }
