@@ -1,12 +1,12 @@
-[![Stories in Ready](https://badge.waffle.io/mttdbrd/medium.png?label=ready&title=Ready)](https://waffle.io/mttdbrd/medium)
-##medium
+
 
 
 A modern course management system built on Spring, MongoDB for student data, and Neo4J for course relationships.
 
 ###Status
 
-![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium) <a href="https://scan.coverity.com/projects/3822">
+![build status](https://travis-ci.org/mttdbrd/medium.svg?branch=master) [![Coverage Status](https://img.shields.io/coveralls/mttdbrd/medium.svg)](https://coveralls.io/r/mttdbrd/medium) [![Stories in Ready](https://badge.waffle.io/mttdbrd/medium.png?label=ready&title=Ready)](https://waffle.io/mttdbrd/medium)
+##medium <a href="https://scan.coverity.com/projects/3822">
   <img alt="Coverity Scan Build Status"
        src="https://scan.coverity.com/projects/3822/badge.svg"/>
 </a>
