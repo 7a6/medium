@@ -14,3 +14,4 @@ addons:
     build_command_prepend: ""
     build_command:   "mvn compile"
     branch_pattern: coverity_scan
+    
