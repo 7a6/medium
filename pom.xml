@@ -25,7 +25,7 @@
     </dependencies>
 
     <properties>
-        <start-class>org.sevenasix.medium.application.Driver</start-class>
+        <start-class>org.sevenasix.medium.application.RestTestDriver</start-class>
     </properties>
 
     <build>
