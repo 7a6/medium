@@ -12,6 +12,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.charset.Charset;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -47,7 +48,7 @@ public class RestTestDriver{
             byte[] data = new byte[bytesReadCount];
             System.arraycopy(buffer.array(), 0, data, 0, bytesReadCount);
             buffer.clear();
-            stringBuilder.append(new String(data));
+            stringBuilder.append(new String(data, Charset.forName("US-ASCII")));
 
         }
         assertTrue(stringBuilder.toString().contains(studentName));
