@@ -22,7 +22,7 @@ public class RestTestDriver{
     @Before
     public void setup(){
         if(!connected){
-            SpringApplication.run(Driver.class, new String[0]);
+            SpringApplication.run(RestTestDriver.class, new String[0]);
             connected = true;
         }
     }
