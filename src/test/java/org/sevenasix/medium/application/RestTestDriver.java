@@ -7,23 +7,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.net.URLConnection;
 
-@ComponentScan
+@ComponentScan ({"org.sevenasix.medium.actors", "org.sevenasix.medium.registrar"})
 @EnableAutoConfiguration
 public class RestTestDriver{
 
     boolean connected = false;
 
     @Before
-    public void run(String[] args){
+    public void setup(){
         if(!connected){
-            SpringApplication.run(RestTestDriver.class, args);
+            SpringApplication.run(Driver.class, new String[0]);
             connected = true;
         }
     }
@@ -33,10 +32,9 @@ public class RestTestDriver{
 
         ByteBuffer buffer = ByteBuffer.allocate(1024);
 
-        URL url = new URL("http://localhost:8080");
-        URLConnection conn = url.openConnection();
-        conn.connect();
-
+        URL url = new URL("http://localhost:8080/student?name=TestStudent");
+        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+        System.out.println("conn = " + conn.getResponseCode() + ", msg = " + conn.getResponseMessage());
         ReadableByteChannel byteChannel = Channels.newChannel(conn.getInputStream());
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -48,6 +46,8 @@ public class RestTestDriver{
             stringBuilder.append(new String(data));
 
         }
+
+        System.out.println(stringBuilder.toString());
 
     
 
