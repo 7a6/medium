@@ -21,12 +21,14 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
 
     <properties>
-        <start-class>org.sevenasix.medium.application.RestTestDriver</start-class>
+        <start-class>org.sevenasix.medium.application.RestDriverTest</start-class>
     </properties>
 
     <build>
@@ -56,19 +58,27 @@
                 <version>0.7.2.201409121644</version>
                 <executions>
                     <execution>
-                        <id>prepare-agent</id>
+                        <id>default-prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
-                <configuration>
-                    <argLine>-javaagent:/home/matt/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/matt/workspace/medium/target/jacoco.exec</argLine>
-                </configuration>
+                <!--configuration>
+                    <argLine>${argLine} -javaagent:/home/matt/.m2/repository/org/jacoco/org.jacoco.agent/0.7.2.201409121644/org.jacoco.agent-0.7.2.201409121644-runtime.jar=destfile=/home/matt/workspace/medium/target/jacoco.exec</argLine>
+                </configuration-->
             </plugin>
         </plugins>
 

@@ -19,14 +19,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @ComponentScan ({"org.sevenasix.medium.actors", "org.sevenasix.medium.registrar"})
 @EnableAutoConfiguration
-public class RestTestDriver{
+public class RestDriverTest {
 
     boolean connected = false;
 
     @Before
     public void setup(){
         if(!connected){
-            SpringApplication.run(RestTestDriver.class, new String[0]);
+            SpringApplication.run(RestDriverTest.class, new String[0]);
             connected = true;
         }
     }
