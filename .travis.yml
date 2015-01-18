@@ -10,7 +10,7 @@ env:
 addons:
   coverity_scan:
     project:
-      name: "mttdbrd/medium"
+      firstName: "mttdbrd/medium"
       description: "Modern course management system"
     notification_email: mttdbrd@gmail.com
     build_command_prepend: ""
