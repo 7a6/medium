@@ -1,0 +1,1 @@
+CREATE DATABASE IF NOT EXISTS medium CHARACTER SET = 'utf8' COLLATE = 'utf8_unicode_ci';
