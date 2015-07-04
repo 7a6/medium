@@ -17,5 +17,5 @@ addons:
     build_command:   "gradle build"
     branch_pattern: coverity_scan
 after_success:
-  - gradle clean test jacoco:report coveralls:report    
+  - gradle clean test jacocoTestReport coveralls
     
