@@ -4,4 +4,8 @@ build/*
 .settings/*
 medium.iml
 LICENSE
+.gradle/
+gradle/
+gradlew
+gradlew.bat
 
