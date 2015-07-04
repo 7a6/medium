@@ -14,8 +14,8 @@ addons:
       description: "Modern course management system"
     notification_email: mttdbrd@gmail.com
     build_command_prepend: ""
-    build_command:   "mvn -DskipTests=true compile"
+    build_command:   "gradle build"
     branch_pattern: coverity_scan
 after_success:
-  - mvn clean test jacoco:report coveralls:report    
+  - gradle clean test jacoco:report coveralls:report    
     
