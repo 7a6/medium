@@ -18,7 +18,9 @@ description = """modern course management software"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+}
 bootRepackage {
     mainClass = 'org.sevenasix.medium.config.Driver'
 }
