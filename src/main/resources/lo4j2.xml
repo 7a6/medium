@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR" name="medium"
+               dest="${sys:java.io.tmpdir}${sys:file.separator}logs${sys:file.separator}log4j-configuration-errors.log">
+    <Properties>
+        <Property name="fileName">
+            ${sys:java.io.tmpdir}${sys:file.separator}logs${sys:file.separator}Screenwriter.Java.${hostName}.${sys:user.name}.${date:yyyyMMdd-HHmmss.SSSSS}.log
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="rollingFile" fileName="${fileName}"
+                     filePattern="${sys:java.io.tmpdir}${sys:file.separator}logs${sys:file.separator}screenwriter-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout header="Log line format: [IWDEFT] yyyy-MM-dd HH:mm:ss.SSS Z threadid file:line] msg\n"
+                           pattern="%level{WARN=W, DEBUG=D, ERROR=E, TRACE=T, INFO=I} %d{yyyy-MM-dd HH:mm:ss.}%-6d{SSS} %d{Z} %replace{%X{PID}}{[-A-Za-z@\.]*}{} %c{1}.java:%L] %msg%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root>
+            <AppenderRef ref="rollingFile" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>
