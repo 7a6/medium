@@ -13,41 +13,26 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'war'
 group = 'org.sevenasix'
 version = '0.1.0'
 description = """modern course management software"""
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 jacoco {
     toolVersion = "0.7.1.201405082137"
-
 }
-
 jacocoTestReport{
     reports {
         html.enabled = true
         xml.enabled = true
         csv.enabled = false
     }
-
 }
 
 bootRepackage {
     mainClass = 'org.sevenasix.medium.config.Driver'
 }
-
-/*task jacocoTestReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
-    sourceDirectories = files(sourceSets.main.allSource.srcDirs)
-    classDirectories =  files(sourceSets.main.output)
-    executionData = files(executionData)
-    reports {
-        html.enabled = true
-        xml.enabled = true
-        csv.enabled = false
-    }
-}*/
-
 repositories {
     jcenter()
     maven { url "https://repo.spring.io/libs-milestone" }
@@ -56,16 +41,26 @@ repositories {
     maven { url "https://repo.maven.apache.org/maven2" }
 }
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.thymeleaf:thymeleaf-spring4'
-    compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
-    compile 'javax.servlet:javax.servlet-api:3.0.1'
-    compile 'org.springframework:spring-context:4.1.4.RELEASE'
-    compile 'org.springframework.data:spring-data-mongodb:1.6.1.RELEASE'
-    compile 'org.springframework.data:spring-data-rest-webmvc:2.1.4.RELEASE'
+    compile ('org.springframework.boot:spring-boot-starter-web'){
+        exclude module: 'spring-boot-starter-logging'
+    }
+    compile ('org.springframework.boot:spring-boot-starter-actuator'){
+        exclude module: 'spring-boot-starter-logging'
+    }
+    //compile 'org.thymeleaf:thymeleaf-spring4'
+    //compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    //compile 'org.springframework:spring-context:4.1.4.RELEASE'
+    //compile 'org.springframework.data:spring-data-mongodb:1.6.1.RELEASE'
+    //compile 'org.springframework.data:spring-data-rest-webmvc:2.1.4.RELEASE'
     compile 'org.springframework:spring-test:4.0.8.RELEASE'
     compile 'org.apache.logging.log4j:log4j-api:2.3'
     compile 'org.apache.logging.log4j:log4j-core:2.3'
     compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.0'
+    compile 'javax.servlet:jstl:1.2'
+    compile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
+    providedCompile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.0.23'
+    testCompile 'com.jayway.restassured:rest-assured:2.4.1'
+    testCompile 'com.jayway.restassured:spring-mock-mvc:2.4.1'
     testCompile 'junit:junit:4.10'
 }
