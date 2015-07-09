@@ -1,0 +1,11 @@
+        String firstLine = " __    __  ______  _____   __  __  __  __    __";
+        String secondLine = "/\\ \"-./  \\/\\  ___\\/\\  __-./\\ \\/\\ \\/\\ \\/\\ \"-./  \\";
+        String thirdLine = "\\ \\ \\-./\\ \\ \\  __\\\\ \\ \\/\\ \\ \\ \\ \\ \\_\\ \\ \\ \\-./\\ \\";
+        String fourthLine = " \\ \\_\\ \\ \\_\\ \\_____\\ \\____-\\ \\_\\ \\_____\\ \\_\\ \\ \\_\\";
+        String fifthLine = "  \\/_/  \\/_/\\/_____/\\/____/ \\/_/\\/_____/\\/_/  \\/_/";
+
+        System.out.println(firstLine);
+        System.out.println(secondLine);
+        System.out.println(thirdLine);
+        System.out.println(fourthLine);
+        System.out.println(fifthLine);
