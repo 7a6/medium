@@ -13,7 +13,7 @@ public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String signup(){
-        return "register";
+        return "signup";
 
     }
 }

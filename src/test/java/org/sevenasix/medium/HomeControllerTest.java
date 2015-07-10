@@ -24,8 +24,8 @@ public class HomeControllerTest {
     public void shouldShowRegistrationPage() throws Exception {
         RegistrationController controller = new RegistrationController();
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
-        mockMvc.perform(MockMvcRequestBuilders.get("/signup")).andExpect(status().isOk()).andDo(print());
-                //.andExpect(content().string(containsString("signup")));
+        mockMvc.perform(MockMvcRequestBuilders.get("/")).andExpect(status().isOk()).andDo(print())
+                .andExpect(content().string(containsString("signup")));
     }
 
     @Test

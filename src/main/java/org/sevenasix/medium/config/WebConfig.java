@@ -18,7 +18,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @ComponentScan("org.sevenasix.medium.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    @Bean
+    @Bean(name="jspViewResolver")
     public ViewResolver getJSPViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/views/");
@@ -27,16 +27,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
-    @Bean
-    public ThymeleafViewResolver viewResolver() {
+    @Bean(name="thymeleafViewResolver")
+    public ThymeleafViewResolver getThymeleafViewResolver() {
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
-        //templateResolver.setTemplateMode("HTML5");
+        templateResolver.setTemplateMode("HTML5");
         templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setSuffix(".html");
         SpringTemplateEngine engine = new SpringTemplateEngine();
-
         engine.setTemplateResolver(templateResolver);
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+        resolver.setExcludedViewNames(new String[]{"home"});
         resolver.setTemplateEngine(engine);
         resolver.setOrder(0);
         return resolver;
