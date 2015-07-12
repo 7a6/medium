@@ -7,9 +7,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.matchers.JUnitMatchers.containsString;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 public class HomeControllerTest {
 
@@ -24,8 +24,17 @@ public class HomeControllerTest {
     public void shouldShowRegistrationPage() throws Exception {
         RegistrationController controller = new RegistrationController();
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
-        mockMvc.perform(MockMvcRequestBuilders.get("/")).andExpect(status().isOk()).andDo(print())
-                .andExpect(content().string(containsString("signup")));
+        mockMvc.perform(MockMvcRequestBuilders.get("/register")).andExpect(status().isOk()).andDo(print());
+                //.andExpect(content().string(containsString("signup")));
+    }
+
+    @Test
+    public void shouldShowErrorTemplate() throws Exception{
+        RegistrationController controller = new RegistrationController();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+        mockMvc.perform(MockMvcRequestBuilders.get("/does_not_exist")).andExpect(status().isOk())
+                .andExpect(view().name("error"));
+
     }
 
     @Test

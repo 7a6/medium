@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by matt on 7/9/15.
  */
 @Controller
-@RequestMapping({"/signup"})
+@RequestMapping({"/register"})
 public class RegistrationController {
 
     @RequestMapping(method = RequestMethod.GET)
