@@ -8,10 +8,7 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldFindUser(){
-        UserRepository repository = new UserRepository();
-        String demouser = "demouser";
-        User user = repository.findByUsername(demouser);
-        user.name.equals("demouser");
+
 
     }
 }

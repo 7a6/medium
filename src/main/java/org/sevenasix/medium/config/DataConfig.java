@@ -14,9 +14,9 @@ public class DataConfig {
     public DataSource dataSource() throws PropertyVetoException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         comboPooledDataSource.setDriverClass("com.mysql.jdbc.Driver");
-        comboPooledDataSource.setJdbcUrl("jdbc:mysql://192.168.122.15/test");
-        comboPooledDataSource.setUser("matt");
-        comboPooledDataSource.setPassword("123go");
+        comboPooledDataSource.setJdbcUrl("jdbc:mysql://localhost/test");
+        comboPooledDataSource.setUser("dbuser");
+        comboPooledDataSource.setPassword("password");
         return null;
     }
 }
