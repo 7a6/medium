@@ -6,4 +6,5 @@ CREATE TABLE IF NOT EXISTS user
     "short_name" VARCHAR(25),
     "password" VARCHAR(255) NOT NULL,
     "auth" 
+)
 
