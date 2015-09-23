@@ -16,11 +16,11 @@ func main() {
 		Addr: "192.168.1.2:8080",
 	}
 
-	http.HandleFunc("/avatar/", handleAvatar)
+	http.HandleFunc("/avatar/", HandleAvatar)
 	server.ListenAndServe()
 }
 
-func handleAvatar(w http.ResponseWriter, r *http.Request) {
+func HandleAvatar(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		getAvatar(w, r)
